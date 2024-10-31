@@ -1,3 +1,12 @@
 [pr_reviewer]
 enable_review_labels_effort = true
-enable_auto_approval = true
+enable_auto_approval = false
+extra_instructions="""\
+- **Code Organization**:
+    - Group code in the controller into sections like // --- Member Variables ---, // --- State Variables ---, // --- State Computed ---, etc.
+    - Split widget code into reusable components using private getters (e.g., Widget get _header).
+    - Place private functions (starting with _) after the onDispose function in the controller.
+    - Ensure listenable, listenableStatus, listenableMap, listenableList, listenableSet, and listenableStream are declared under // --- State Variables ---.
+    - Ensure listenableComputed variables are declared under // --- State Computed ---.
+...
+"""
